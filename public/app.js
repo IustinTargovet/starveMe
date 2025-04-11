@@ -45,13 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const minutes = Math.floor((totalSeconds % 3600) / 60);
       const seconds = totalSeconds % 60;
   
-      timeLeftElem.textContent = `${days
-        .toString()
-        .padStart(2, "0")} : ${hours
-        .toString()
-        .padStart(2, "0")} : ${minutes
-        .toString()
-        .padStart(2, "0")} : ${seconds.toString().padStart(2, "0")}`;
+      timeLeftElem.textContent = `${days.toString().padStart(2, "0")}:${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
   
       let elapsed = now - FAST_START;
       if (elapsed < 0) elapsed = 0;
