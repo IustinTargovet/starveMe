@@ -4,12 +4,12 @@
     "description": "Prototype donation web page for water fast donation and leaderboard",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+        "start": "node server.js"
     },
     "dependencies": {
-      "dotenv": "^10.0.0",
-      "express": "^4.17.1",
-      "stripe": "^10.0.0"
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "pg": "^8.14.1",
+        "stripe": "^10.0.0"
     }
-  }
-  
+}
