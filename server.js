@@ -9,9 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Initialize PostgreSQL pool using the DATABASE_URL environment variable
+const isProduction = process.env.NODE_ENV === 'production';
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  ssl: isProduction ? { rejectUnauthorized: false } : false,
 });
 
 // Serve static assets from the "public" folder
