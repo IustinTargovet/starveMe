@@ -1,0 +1,15 @@
+{
+    "name": "starve-me-donations",
+    "version": "1.0.0",
+    "description": "Prototype donation web page for water fast donation and leaderboard",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "dotenv": "^10.0.0",
+      "express": "^4.17.1",
+      "stripe": "^10.0.0"
+    }
+  }
+  

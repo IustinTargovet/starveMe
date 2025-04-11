@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Water Fast Donations</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Water Fast for a Cause</h1>
+      <p>Donate to support starving children and help extend my water fast!</p>
+    </header>
+
+    <section id="donation-section">
+      <h2>Make a Donation</h2>
+      <form id="donation-form">
+        <label for="donorName">Your Name:</label>
+        <input type="text" id="donorName" name="donorName" placeholder="Anonymous (optional)">
+        <label for="amount">Donation Amount (EUR):</label>
+        <input type="number" id="amount" name="amount" placeholder="e.g. 5" step="0.01" required>
+        <button type="submit">Donate</button>
+      </form>
+    </section>
+
+    <section id="timers">
+      <h2>Fast Timers</h2>
+      <div class="timer">
+        <h3>Time Left in Fast</h3>
+        <p id="time-left">Loading...</p>
+      </div>
+      <div class="timer">
+        <h3>Elapsed Fast Time</h3>
+        <p id="elapsed-time">Loading...</p>
+      </div>
+    </section>
+
+    <section id="leaderboard-section">
+      <h2>Leaderboard</h2>
+      <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>Donor</th>
+            <th>Total Donation (EUR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Leaderboard entries will populate here -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
