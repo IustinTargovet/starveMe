@@ -1,88 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Starving for the Starving</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Optional: add Tailwind configuration if needed -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Roboto', sans-serif; }
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Starving for the Starving</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
-  <!-- Hero Section -->
-  <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center py-16">
-    <div class="max-w-2xl mx-auto px-4">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6">Starving for the Starving</h1>
-      <p class="text-lg sm:text-xl leading-relaxed">
-        I'm doing a water fast for a cause close to my heart. For every euro donated, 
-        I will extend my fast by 5 minutes – up to a maximum of 7 days.
-      </p>
-    </div>
-  </header>
-
-  <!-- Main Content Container -->
-  <main class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-6">
-    <!-- Timers Section -->
-    <section class="border-b border-gray-300 pb-8 mb-8">
-      <div class="flex flex-col sm:flex-row justify-around items-center gap-8">
-        <!-- Time Left in Fast (big & centered) -->
-        <div class="text-center">
-          <h2 class="text-2xl font-semibold mb-4">Time Left in Fast</h2>
-          <p id="time-left" class="text-8xl font-extrabold text-blue-700">Loading...</p>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center py-16">
+        <div class="max-w-2xl mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-6">Starving for the Starving</h1>
+            <p class="text-lg sm:text-xl leading-relaxed">
+                I'm doing a water fast for a cause close to my heart. For every euro donated,
+                I will extend my fast by 5 minutes – up to a maximum of 7 days.
+            </p>
         </div>
-        <!-- Time From My Last Meal (smaller, below) -->
-        <div class="text-center">
-          <h3 class="text-xl font-semibold mb-2">Time From My Last Meal</h3>
-          <p id="elapsed-time-large" class="text-3xl font-bold text-gray-700">Loading...</p>
-          <p id="elapsed-time-small" class="text-sm text-gray-500 mt-1">Loading...</p>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Donation Form Section -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-center mb-6">Make a Donation</h2>
-      <form id="donation-form" class="max-w-md mx-auto space-y-6">
-        <div>
-          <label for="donorName" class="block text-sm font-bold mb-1">Your Name:</label>
-          <input type="text" id="donorName" name="donorName" placeholder="Anonymous (optional)"
-                 class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
-        </div>
-        <div>
-          <label for="amount" class="block text-sm font-bold mb-1">Donation Amount (EUR):</label>
-          <input type="number" id="amount" name="amount" placeholder="e.g. 5" step="0.01" required
-                 class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
-        </div>
-        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-bold transition duration-300">
-          Donate
-        </button>
-      </form>
-    </section>
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-6">
+        <!-- Timers Section -->
+        <section class="border-b border-gray-300 pb-8 mb-8 text-center">
+            <!-- Time Left in Fast -->
+            <h2 class="text-2xl font-semibold mb-4">Time Left in Fast</h2>
+            <div class="flex justify-center">
+                <p id="time-left" class="text-8xl font-extrabold text-blue-700 tracking-widest text-center">
+                    Loading...
+                </p>
+            </div>
 
-    <!-- Leaderboard Section -->
-    <section id="leaderboard-section">
-      <h2 class="text-2xl font-semibold text-center mb-6">Leaderboard</h2>
-      <div class="overflow-x-auto">
-        <table id="leaderboard" class="min-w-full bg-gray-50 rounded-md overflow-hidden shadow">
-          <thead class="bg-blue-700 text-white">
-            <tr>
-              <th class="px-6 py-3 text-left text-sm font-medium">Donor</th>
-              <th class="px-6 py-3 text-left text-sm font-medium">Total Donation (EUR)</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
-            <!-- Leaderboard entries will populate here -->
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </main>
+            <!-- Time From My Last Meal -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-2">Time From My Last Meal</h3>
+                <p id="elapsed-time-large" class="text-3xl font-bold text-gray-700">Loading...</p>
+                <p id="elapsed-time-small" class="text-sm text-gray-500 mt-1">Loading...</p>
+            </div>
+        </section>
+        <!-- Donation Form Section -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold text-center mb-6">Make a Donation</h2>
+            <form id="donation-form" class="max-w-md mx-auto space-y-6">
+                <div>
+                    <label for="donorName" class="block text-sm font-bold mb-1">Your Name:</label>
+                    <input type="text" id="donorName" name="donorName" placeholder="Anonymous (optional)"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+                <div>
+                    <label for="amount" class="block text-sm font-bold mb-1">Donation Amount (EUR):</label>
+                    <input type="number" id="amount" name="amount" placeholder="e.g. 5" step="0.01" required
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+                <button type="submit"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-bold transition duration-300">
+                    Donate
+                </button>
+            </form>
+        </section>
 
-  <script src="app.js"></script>
+        <!-- Leaderboard Section -->
+        <section id="leaderboard-section">
+            <h2 class="text-2xl font-semibold text-center mb-6">Leaderboard</h2>
+            <div class="overflow-x-auto">
+                <table id="leaderboard" class="min-w-full bg-gray-50 rounded-md overflow-hidden shadow">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-sm font-medium">Donor</th>
+                            <th class="px-6 py-3 text-left text-sm font-medium">Total Donation (EUR)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <!-- Leaderboard entries will populate here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
 </body>
+
 </html>

@@ -22,7 +22,7 @@ app.use(express.json());
 app.use('/webhook', bodyParser.raw({ type: 'application/json' }));
 
 // Fast parameters
-const FAST_START = new Date('2025-04-10T00:00:00Z');
+const FAST_START = new Date('2025-04-10T20:00:00Z');
 const INITIAL_FAST_MINUTES = 5 * 24 * 60; // 5 days in minutes
 const MAX_FAST_MINUTES = 7 * 24 * 60; // 7 days in minutes
 const MAX_EXTRA_MINUTES = MAX_FAST_MINUTES - INITIAL_FAST_MINUTES; // extra minutes possible
@@ -108,7 +108,7 @@ app.post('/webhook', async (req, res) => {
         extraMinutes = fastResult.rows[0].extra_minutes;
       }
 
-      const additionalMinutes = donationAmountEuros;
+      const additionalMinutes = donationAmountEuros * 5;
       const newExtraMinutes = Math.min(extraMinutes + additionalMinutes, MAX_EXTRA_MINUTES);
 
       if (recordId !== null) {

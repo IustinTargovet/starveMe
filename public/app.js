@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
       const seconds = totalSeconds % 60;
     
       // Update the main timer (big & centered)
-      timeLeftElem.textContent = `${days.toString().padStart(2, '0')}d : ${hours.toString().padStart(2, '0')}h : ${minutes.toString().padStart(2, '0')}m : ${seconds.toString().padStart(2, '0')}s`;
+      timeLeftElem.textContent = `${days.toString().padStart(2, '0')} : ${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+
     
       // Calculate elapsed fast time in minutes since FAST_START
       let elapsed = now - FAST_START;
