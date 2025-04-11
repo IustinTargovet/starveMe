@@ -16,12 +16,13 @@ const pool = new Pool({
   ssl: isProduction ? { rejectUnauthorized: false } : false,
 });
 
+// Use raw body parser for the Stripe webhook endpoint
+app.use('/webhook', bodyParser.raw({ type: 'application/json' }));
+
 // Serve static assets from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// Use raw body parser for the Stripe webhook endpoint
-app.use('/webhook', bodyParser.raw({ type: 'application/json' }));
 
 // Fast parameters
 const FAST_START = new Date('2025-04-10T20:00:00Z');
